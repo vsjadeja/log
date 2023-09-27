@@ -16,14 +16,14 @@ go get github.com/vsjadeja/log
 package main
 
 import (
-	zmlog "github.com/vsjadeja/log"
+	lg "github.com/vsjadeja/log"
 	"context"
 )
 
 func main() {
-	logger := zmlog.L() //as singleton
+	logger := lg.L() //as singleton
 	//or
-	logger = zmlog.NewLogger() //normal method
+	logger = lg.NewLogger() //normal method
 }
 ```
 
@@ -33,7 +33,7 @@ func main() {
 package main
 
 import (
-	zmlog "github.com/vsjadeja/log"
+	lg "github.com/vsjadeja/log"
 	"go.uber.org/zap/zapcore"
 	
 	"context"
@@ -41,7 +41,7 @@ import (
 
 func main() {
 	ctx := context.Background()
-	logger := zmlog.NewLogger()
+	logger := lg.NewLogger()
 	
 	//prints log and traceId if it exists in context
 	logger.Info(ctx, "info log", "key1", 1, "key2", 2)
